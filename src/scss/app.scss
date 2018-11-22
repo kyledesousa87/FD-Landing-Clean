@@ -1,0 +1,63 @@
+// Custom bootstrap variable overrides
+@import "mixins/colors";
+@import "bootstrap_variable_overrides";
+
+//Bootstrap styles
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/owl.carousel/src/scss/owl.carousel";
+@import "node_modules/owl.carousel/src/scss/owl.theme.default";
+
+
+//Custom mixins
+@import "mixins/mixins";
+@import "mixins/variables";
+
+
+
+//GIA custom settings --
+@import "settings";
+
+
+@import "components/lineicons";
+
+//Component specific styles 
+@import "components/font";
+@import "components/implants";
+@import "components/social";
+@import "components/icon_list";
+@import "components/panels";
+@import "components/fpanel";
+@import "components/accordion_custom";
+@import "components/bookContainer";
+@import "components/reviews";
+@import "components/reviews";
+@import "components/modal";
+@import "components/subheader";
+@import "components/dental-cards";
+
+
+
+//Form specific styles
+@import "forms/buttons";
+
+
+@import "pages/home";
+
+@import "pages/backgrounds";
+
+
+//Layout
+@import "layout/layout";
+@import "layout/footer";
+@import "layout/nav_header";
+@import "layout/di-nav";
+
+@import "layout/hero-banners";
+@import "layout/side-panel-booking";
+@import "layout/inv_holder";
+@import "layout/henry-layout";
+
+@import "forms/form_getting_started";
+
+
+
