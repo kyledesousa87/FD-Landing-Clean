@@ -1,0 +1,66 @@
+  {
+    "branch1": {
+      "add1": "Bermondsey",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+
+    },
+    "branch2": {
+      "add1": "Birmingham",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch3": {
+      "add1": "Brentwood",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch4": {
+      "add1": "Cannon St",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch5": {
+      "add1": "Leicester",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch6": {
+      "add1": "Liverpool St",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch7": {
+      "add1": "Milton Keynes",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch8": {
+      "add1": "Winchester",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    },
+    "branch9": {
+      "add1": "Wokingham",
+      "city": "London",
+      "la": "a",
+      "lo": "b"
+    }
+  }
+
+
+
+
+
+
+
+
+

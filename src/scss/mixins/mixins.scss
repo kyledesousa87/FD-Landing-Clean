@@ -166,3 +166,9 @@
 
 
 
+$public_path: "/";
+
+@mixin svgPngFb($name) {
+  background-image: url('#{$public_path}images/#{$name}@2x.png');
+  background-image: none, url('#{$public_path}images/#{$name}.svg');
+}
