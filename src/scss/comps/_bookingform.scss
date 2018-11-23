@@ -51,9 +51,32 @@
   &_location{
     border-top: 2px solid $acc1;
     padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    p {
+      margin: 0;
+    }
+    &:before {
+      $icoW: 17px;
+      $icoH: 23px;
+      @include svgPngFb("new/icon-marker");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: $icoW/1.5 $icoH/1.5;
+      margin-right: 10px;
+      content: "";
+
+      display: block;
+      width: $icoW + 00px;
+
+    }
 
   }
-  &_map{}
+  &_map{
+    height: 200px;
+    background-color: $gray-200;
+  }
 }
 
 
@@ -91,6 +114,7 @@
     display: inline-block;
     min-width: 180px;
     text-align: center;
+    margin-top: 10px;
   }
 
 
