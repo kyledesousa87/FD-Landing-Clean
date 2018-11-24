@@ -92,5 +92,11 @@
   align-items: center;
   align-self: center;
   justify-content: center;
+  text-decoration: none;
+  &:hover {
+    background-color: $acc1;
+    color: white;
+    text-decoration: none;
+  }
 
 }

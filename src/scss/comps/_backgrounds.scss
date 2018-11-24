@@ -144,6 +144,9 @@
       flex-direction: row;
       padding: 10px 10px 10px 25px;
       width: 100%;
+      justify-content: space-around;
+
+
       .usp-item{
 
         margin-right: 10px;
@@ -178,4 +181,32 @@
 
 
   }
+}
+
+
+.footer-disc {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  &_name{
+    @include fluid-type(16px, 18px);
+    border-bottom: 1px solid $acc1;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: $acc2;
+    font-weight: bold;
+    font-style: italic;
+  }
+  &_type{
+    @include fluid-type(16px, 18px);
+    font-style: italic;
+  }
+  &_img{
+    position: absolute;
+    right: 0;
+    top: -13px;
+    width: 100px;
+  }
+
 }

@@ -30,8 +30,10 @@
 <body>
 
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+
     <div id="cover" style="display: none"></div>
-    <main role="main" class="invisalign container-fluid p-0">
+    <main role="main">
         {{>main-nav}}
         <div class="sidebar-holder">
             <div class="sidebar">
@@ -41,12 +43,15 @@
         <div class="main-holder">
             {{> body}}
         </div>
+        {{>reviews}}
         {{>footer}}
 
 
 
     </main>
-
+    <div class="mobile-btn">
+        <button class="openForm btn submit full big mt-3 " name="submitC" value="BOOK NOW">Book <span class="hideMe">Your </span><strong>Free Consultation</strong><span class="hideMe"> Now</span></button>
+    </div>
     {{>modal-video}}
     {{>modal-form}}
     {{>modal-guarantee}}

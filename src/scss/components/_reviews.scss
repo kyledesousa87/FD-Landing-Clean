@@ -18,10 +18,10 @@
           width: 20px;
           height: 20px;
           margin-right: 4px;
-          background-image: url($imgPathRoot + "star-rating@2x.png");
+          background-image: url($imgPathRoot + "new/star-rating@2x.png");
           background-image:
                   linear-gradient(transparent, transparent),
-                  url($imgPathRoot + "star-rating.svg");
+                  url($imgPathRoot + "new/star-rating.svg");
           background-repeat: no-repeat;
           background-position: center center;
           background-size: contain;

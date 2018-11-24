@@ -12,7 +12,7 @@
 //Custom mixins
 @import "mixins/mixins";
 @import "mixins/variables";
-@import "mixins/variables";
+
 
 
 
@@ -21,6 +21,8 @@
 
 @import "components/font";
 @import "components/lineicons";
+@import "components/reviews";
+@import "components/icon_list";
 
 //Component specific styles
 @import "layout/main-nav";

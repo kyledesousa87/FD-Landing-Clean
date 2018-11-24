@@ -24,7 +24,7 @@ $footerH: 280px;
       @include media-breakpoint-down(sm) {
         @include make-col(12);
         padding: 15px 0;
-        border-bottom: 1px solid lighten($acc3, 10% );
+        border-bottom: 1px solid lighten($footerBG, 10% );
 
 
         &:nth-child(1){
