@@ -1,0 +1,13 @@
+.pushout {
+  z-index: 500;
+}
+
+.main-nav {
+  &.pass {
+    z-index: 600 !important;
+  }
+}
+
+.fixed-top {
+  z-index: 600 !important;
+}

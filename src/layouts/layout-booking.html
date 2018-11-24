@@ -30,46 +30,149 @@
 <body>
 
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-
+    <div id="cover" style="display: none"></div>
     <main role="main" class="invisalign container-fluid p-0">
-        {{> body}}
+        {{>main-nav}}
+        <div class="sidebar-holder">
+            <div class="sidebar">
+                {{>booking-form-comp}}
+            </div>
+        </div>
+        <div class="main-holder">
+            {{> body}}
+        </div>
+
+
+
     </main>
 
     {{>modal-video}}
     {{>modal-form}}
     {{>modal-guarantee}}
     <script src="{{root}}/js/app.js"></script>
-    <script type="application/javascript">
 
 
-    function smallScreen(){
-        return $(window).width() <= 1179;
-    }
+    <!-- GOOGLE SUBFOOTER MAP CODE -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT6duizAaZy3PGAVB5uNQq0BotsEnUllE&libraries=geometry"></script>
+    <script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT6duizAaZy3PGAVB5uNQq0BotsEnUllE&libraries=geometry"></script>
+    <script>
+        var geocoder;
+        var map;
+        var myAddressLatLng;
+        var foundOne = false;
+        var events = new Object;
+        markers = new Object;
+        secondaryMarkers = [];
+        infoWindows = new Object;
+        limitKms = 70;
+        limitKms2 = 1000;
 
-    function initSidebarHide (){
-        var offsetTop = $(".loadnav").offset().top;
-        var scrollTop = $(window).scrollTop() + 150;
-
-        if(scrollTop > offsetTop){
-            $("#csfloater").fadeIn(200);
-        }else if(scrollTop < offsetTop){
-            $("#csfloater").fadeOut(200);
+        //calculates distance between two points in km's
+        function calcDistance(p1, p2){
+            return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
         }
-    }
 
-    $(document).ready(function() {
-        if(!smallScreen()){
-            initSidebarHide();
+        function initialize() {
+            cur=0;
+            closestDistance=1000000;
+            foundOne = false;
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(52.0381634,-0.7751537);
+            var mapOptions = {
+                zoom: 11,
+                center: latlng,
+                styles: [{"stylers": [{ "saturation": -100 }]}]
+            }
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            bound = new google.maps.LatLngBounds();
+            centerOnAddress();
         }
-    });
 
-    $(window).scroll(function(){
-        if(!smallScreen()){
-            initSidebarHide();
+        function rad(x) {return x*Math.PI/180;}
+        function centerOnAddress() {
+            var fail = false;
+            var address = '';
+            if (address.indexOf(' UK')==-1) address += ", UK";
+            geocoder.geocode( { 'address': address}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+
+
+                    myAddressLatLng = new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+
+                    if(address!=', UK') {
+                        map.setCenter(results[0].geometry.location);
+                        /* var marker = new google.maps.Marker({
+                          map: map,
+                          position: results[0].geometry.location
+                      }); */
+                        bound.extend(results[0].geometry.location);
+                        map.fitBounds(bound);
+                    }
+
+                    [[Ditto? &parents=`6` &total=`100` &summarize=`100` &depth=`1` &tpl=`locationsJS` &paginate=`1` &display=`100` ]]
+
+
+
+                    var R = 6371; // radius of earth in km
+
+                    if(address!=', UK') {
+                        for(i in markers) {
+
+
+                            var lat = myAddressLatLng.lat();
+                            var lng = myAddressLatLng.lng();
+                            var mlat = markers[i].position.lat();
+                            var mlng = markers[i].position.lng();
+                            var dLat  = rad(mlat - lat);
+                            var dLong = rad(mlng - lng);
+                            var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                                Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+                            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                            var d = R * c;
+                            if ( d<closestDistance ) {
+                                closestID = i;
+                                closestDistance=d;
+                            }
+                        }
+
+
+                        infoWindows[closestID].open(map,markers[closestID]);
+                        openWindow = true;
+                        closestDistance = Math.round(closestDistance * 10) / 10;
+                        infoWindows[closestID].setContent(infoWindows[closestID].getContent().replace("<!-- DIST -->"," ("+closestDistance+"m)"));
+                    }
+
+                    /* if(distance<=closestDistance) {
+                        closestDistance=distance;
+                        closestID = '';
+                    } */
+
+
+                    if(address==', UK') map.setZoom(7);
+
+                } else {
+                    if(status=='ZERO_RESULTS')
+                        alert('We were unable to geolocate the address you provided. Please try again.');
+                    else
+                        console.log('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+
+
         }
-    });
+
+        // defer GM loading except on locations page
+        if($('.locations #map-canvas').length) {
+            initialize();
+        } else {
+            var dgm = setTimeout(function(){
+                initialize();
+            },3000);
+        }
 
 
-</script>
+    </script>
+
 </body>
 </html>

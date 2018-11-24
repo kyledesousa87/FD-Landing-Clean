@@ -6,10 +6,12 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/owl.carousel/src/scss/owl.carousel";
 @import "node_modules/owl.carousel/src/scss/owl.theme.default";
+@import "node_modules/hover.css/scss/hover";
 
 
 //Custom mixins
 @import "mixins/mixins";
+@import "mixins/variables";
 @import "mixins/variables";
 
 
@@ -20,13 +22,19 @@
 
 @import "components/lineicons";
 
-//Component specific styles 
+//Component specific styles
+@import "layout/main-nav";
+@import "layout/sidebar";
+@import "layout/content-home";
+@import "layout/content-pricing";
+
 @import "components/font";
+@import "components/modal";
+@import "components/zindexs";
 
 @import "comps/bookingform";
-
-
-
+@import "comps/backgrounds";
+@import "comps/buttons";
 
 
 

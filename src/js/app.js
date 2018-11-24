@@ -184,7 +184,6 @@ function openModal(id) {
     $('html,body').animate({scrollTop:0},'fast');
 
 }
-
 function reOpen(){
     $.urlParam = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -230,37 +229,47 @@ function anim(p) {
     },500);
 }
 
-function hideEleOnPage (e){
-    $.fn.isInViewport = function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
 
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-    $(e).each(function() {
-        if ($(this).isInViewport()) {
-            $('.special-btn').hide();
-
-        } else {
-            $('.special-btn').show();
+function navScroll(){
+    var menuBarOpenedOnce = 0;
+    //caches a jQuery object containing the header element
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 50) {
+            $(".main-nav").addClass("pass");
+            menuBarOpenedOnce = 1;
+        }else if(scroll >= 0){
+            $(".main-nav").removeClass("pass");
         }
     });
 }
 
 $(window).on('resize scroll', function() {
-    hideEleOnPage('.hideBtnInit');
 
+    navScroll();
 });
 
 
 
 $(document).ready(function() {
 
-    //call back to add active class
-    hideEleOnPage('.hideBtnInit');
+
+    navScroll();
+
+    $('.btn-readmore').on('click', function(e){
+        e.preventDefault();
+        var elem =  $(this).closest('.more-text').find(".btn-readmore").text();
+        if (elem == "Read More") {
+            //Stuff to do when btn is in the read more state
+            $(this).closest('.more-text').find(".btn-readmore").text("Read Less");
+
+        } else {
+            //Stuff to do when btn is in the read less state
+            $(this).closest('.more-text').find(".btn-readmore").text("Read More...");
+        }
+        $(this).closest('.more-text').find('.more').slideToggle()
+    });
+
 
     $('.clients-reviews').owlCarousel({
         autoplay: true,
@@ -287,7 +296,7 @@ $(document).ready(function() {
     });
 
 
-    $('.nav-anchor li a').click(function() {
+    $('.nav .nav-item .nav-link ').click(function() {
         $('.navbar .nav-anchor ul li a').removeClass('active');
         $(this).addClass('active');
 
@@ -298,16 +307,7 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.main-nav_links li a').click(function() {
-        $('.main-nav_links ul li a').removeClass('active');
-        $(this).addClass('active');
 
-        var target = $(this.hash);
-        if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
-        if (target.length == 0) target = $('html');
-        $('html, body').animate({ scrollTop: target.offset().top - 52}, 1000);
-        return false;
-    });
 
     // close modal if overlay tapped/clicked
     $('#cover,.modal').click(function(e) {

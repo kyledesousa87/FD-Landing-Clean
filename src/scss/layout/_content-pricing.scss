@@ -1,0 +1,15 @@
+.price-hed {
+  display: flex;
+  flex-direction: row;
+  .price-hed_img {
+    width: 100px;
+    &.arch {
+      width: 200px;
+      margin-right: 20px;
+    }
+  }
+  .price-hed_txt {
+    width: 100%;
+    flex-grow: 1;
+  }
+}

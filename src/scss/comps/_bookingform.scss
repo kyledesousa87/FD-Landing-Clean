@@ -1,4 +1,21 @@
 .booking-form {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 0px 12px rgba(0,0,0,0.10);
+
+
+  @include media-breakpoint-up(xs) {
+    margin: auto;
+  }
+  @include media-breakpoint-up(sm) {
+    margin: auto;
+  }
+  @include media-breakpoint-up(md) {
+    margin-top: 120px;
+    align-self: start;
+  }
+  @include media-breakpoint-up(lg) {
+   margin: auto;
+    align-self: center;
+  }
   &_hed{
 
     display: flex;
@@ -49,6 +66,7 @@
     flex-direction: column;
   }
   &_location{
+    background-color: white;
     border-top: 2px solid $acc1;
     padding: 10px 20px;
     display: flex;
@@ -74,7 +92,7 @@
 
   }
   &_map{
-    height: 200px;
+
     background-color: $gray-200;
   }
 }
@@ -115,6 +133,11 @@
     min-width: 180px;
     text-align: center;
     margin-top: 10px;
+
+    &:hover {
+        @include grow();
+
+    }
   }
 
 
