@@ -19,16 +19,18 @@
 //GIA custom settings --
 @import "settings";
 
-
+@import "components/font";
 @import "components/lineicons";
 
 //Component specific styles
 @import "layout/main-nav";
 @import "layout/sidebar";
 @import "layout/content-home";
+@import "layout/content-results";
 @import "layout/content-pricing";
+@import "layout/footer";
 
-@import "components/font";
+
 @import "components/modal";
 @import "components/zindexs";
 

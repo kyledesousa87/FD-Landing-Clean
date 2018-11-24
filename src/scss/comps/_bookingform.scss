@@ -43,18 +43,27 @@
     }
     &:before {
 
-      background-color: darken($acc1, 10%);
+      background-color: $acc2;
       $icoW: 39px;
       $icoH: 40px;
       @include svgPngFb("new/icon-call");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: $icoW/1.5 $icoH/1.5;
-
       content: "";
-
-      display: block;
       width: $icoW + 15px;
+      @include media-breakpoint-up(xs) {
+        display: none;
+      }
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
 
     }
 

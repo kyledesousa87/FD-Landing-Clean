@@ -50,10 +50,58 @@
 
 .splash-peaceOfMind {
   background: url($imgPathRoot + "/new/splash-peaceofmind.jpg");
-  background-position: left bottom;
-  background-size: auto;
-  background-attachment: fixed;
+
+
   background-repeat: no-repeat;
+
+  @include media-breakpoint-up(xs) {
+    background-position: bottom left;
+    background-attachment: scroll;
+    background-size: 120%;
+    padding-bottom: 381px;
+  }
+  @include media-breakpoint-up(sm) {
+    background-attachment: scroll;
+    background-position: left bottom;
+    background-size: 62%;
+    padding-bottom: 390px;
+  }
+  @include media-breakpoint-up(md) {
+    background-attachment: scroll;
+    background-position: left bottom;
+    background-size: 62%;
+    padding-bottom: 390px;
+
+  }
+
+  @media (min-width: 1380px){
+    background-attachment: scroll;
+    background-position: bottom left;
+    background-size: 42%;
+    padding-bottom: inherit;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-attachment: scroll;
+    background-position: bottom left;
+    background-size: 42%;
+    padding-bottom: inherit;
+
+  }
+
+  @media (min-width: 1580px) {
+    background-attachment: scroll;
+    background-position: -130px -40px;
+    background-size: 40%;
+    padding-bottom: inherit;
+  }
+
+  @media (min-width: 2000px) {
+    background-attachment: scroll;
+    background-position: bottom left;
+    background-size: 40%;
+    padding-bottom: inherit;
+  }
 }
 
 .bg-peaceOfMind {

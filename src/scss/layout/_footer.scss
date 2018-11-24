@@ -1,26 +1,18 @@
 // Layout Style
 
 //$footerBG: pink;
-$footerBG: $acc3;
+$footerBG: $acc1;
 $footerH: 280px;
 
-body {
-  padding: 0 !important;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 .footer {
 
-  @include make-container();
+
 
   background-color: $footerBG;
 
   .footer-row {
-    @extend .container;
+    max-width: 1600px;
     @include make-row();
     margin: 0 auto !important;
 
