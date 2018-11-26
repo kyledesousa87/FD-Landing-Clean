@@ -1,10 +1,10 @@
 .close-up-fake-margin {
 
   @include media-breakpoint-up(xs) {
-    margin: 0 30px 0 30px;
+    margin: auto;
   }
   @include media-breakpoint-up(sm) {
-    margin: 0 30px 0 30px;
+    margin: auto;
   }
   @include media-breakpoint-up(md) {
     margin: 0 0 0 7px;
