@@ -307,8 +307,6 @@ $(document).ready(function() {
         return false;
     });
 
-
-
     // close modal if overlay tapped/clicked
     $('#cover,.modal').click(function(e) {
         if(e.target == this) {
@@ -318,6 +316,8 @@ $(document).ready(function() {
             closeModal('quote');
             closeModal('remarket');
             closeModal('guarantee');
+            closeModal('terms');
+            closeModal('complaints');
         }
 
     });
@@ -333,11 +333,31 @@ $(document).ready(function() {
     });
 
     $('.guaranteePopup').click(function(e){
-
         e.preventDefault();
         openModal('guarantee');
         $('#guaranteeModalOuter .modal-content .modal-body ').css('overflow-y', 'auto');
         $('#guaranteeModalOuter .modal-content .modal-body').css('max-height', $(window).height() * 0.7);
+    });
+
+    $('.termsPopup').click(function(e){
+        e.preventDefault();
+        openModal('terms');
+        $('#termsModalOuter .modal-content .modal-body ').css('overflow-y', 'auto');
+        $('#termsModalOuter .modal-content .modal-body').css('max-height', $(window).height() * 0.7);
+    });
+
+    $('.privacyPopup').click(function(e){
+        e.preventDefault();
+        openModal('privacy');
+        $('#privacyModalOuter .modal-content .modal-body ').css('overflow-y', 'auto');
+        $('#privacyModalOuter .modal-content .modal-body').css('max-height', $(window).height() * 0.7);
+    });
+
+    $('.complaintsPopup').click(function(e){
+        e.preventDefault();
+        openModal('complaints');
+        $('#complaintsModalOuter .modal-content .modal-body ').css('overflow-y', 'auto');
+        $('#complaintsModalOuter .modal-content .modal-body').css('max-height', $(window).height() * 0.7);
     });
 
     $('.close').click(function(e){
@@ -348,6 +368,9 @@ $(document).ready(function() {
         closeModal('quote');
         closeModal('remarket');
         closeModal('guarantee');
+        closeModal('terms');
+        closeModal('privacy');
+        closeModal('complaints');
     });
 
     $('a.play').click(function(e){
@@ -380,9 +403,7 @@ $(document).ready(function() {
             return false;
         }
 
-
     });
-
 
 
     $("form[action='/patient_submission.php']").submit(function(event){
@@ -395,7 +416,6 @@ $(document).ready(function() {
 
 
     });
-
 
     // cancel popup form if any other form touched
     $('input,select,a').on('focus click change',function(){

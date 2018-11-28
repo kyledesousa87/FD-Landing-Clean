@@ -54,53 +54,71 @@
 
   background-repeat: no-repeat;
 
-  @include media-breakpoint-up(xs) {
-    background-position: bottom left;
+  @media (min-width: 100px) {
     background-attachment: scroll;
-    background-size: 120%;
-    padding-bottom: 381px;
-  }
-  @include media-breakpoint-up(sm) {
-    background-attachment: scroll;
-    background-position: left bottom;
-    background-size: 62%;
-    padding-bottom: 390px;
-  }
-  @include media-breakpoint-up(md) {
-    background-attachment: scroll;
-    background-position: left bottom;
-    background-size: 62%;
-    padding-bottom: 390px;
-
+    background-position: 0 bottom;
+    background-size: contain;
+    padding-bottom: 330px;
   }
 
-  @media (min-width: 1380px){
+  @media (min-width: 200px) {
     background-attachment: scroll;
-    background-position: bottom left;
-    background-size: 42%;
-    padding-bottom: inherit;
+    background-position: 0 bottom;
+    background-size: 50%;
+    padding-bottom: 330px;
   }
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 390px) {
     background-attachment: scroll;
-    background-position: bottom left;
-    background-size: 42%;
-    padding-bottom: inherit;
-
+    background-position: 0 bottom;
+    background-size: 80%;
+    padding-bottom: 280px;
   }
+
+  @media (min-width: 490px) {
+    background-attachment: scroll;
+    background-position: 0 bottom;
+    background-size: 80%;
+    padding-bottom: 480px;
+  }
+
+  @media (min-width: 700px) {
+    background-attachment: scroll;
+    background-position: 0 bottom;
+    background-size: 40%;
+    padding-bottom: 270px;
+  }
+
+
+  @media (min-width: 1000px) {
+    background-attachment: scroll;
+    background-position: 0 bottom;
+    background-size: 40%;
+    padding-bottom: 360px;
+  }
+
+
+
+  @media (min-width: 1200px) {
+    background-attachment: scroll;
+    background-position: -120px bottom;
+    background-size: 40%;
+    padding-bottom: 40px;
+  }
+
 
   @media (min-width: 1580px) {
     background-attachment: scroll;
-    background-position: -130px -40px;
+    background-position: -130px bottom;
     background-size: 40%;
-    padding-bottom: inherit;
+    padding-bottom: 45px;
   }
 
   @media (min-width: 2000px) {
     background-attachment: scroll;
     background-position: bottom left;
     background-size: 40%;
-    padding-bottom: inherit;
+    padding-bottom: 45px;
   }
 }
 

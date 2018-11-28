@@ -43,6 +43,9 @@
           .nav-link {
             padding: 0 15px;
             border-right:1px solid $gray-200 ;
+            &:last-child {
+              border-right:0;
+            }
             .hide {
               @include media-breakpoint-up(lg) {
                 display: inline-block;

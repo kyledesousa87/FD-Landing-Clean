@@ -5,7 +5,7 @@
     <div class="price-hed_txt">
         <h3 class="h1 txt-c2"><b>Whole</b> Arch</h3>
         <div class="divider blue"></div>
-        <h5 class="txt-c2 mb-4"><b>from £113.24 per month<sup>2</sup></b></h5>
+        <h5 class="txt-c2 mb-4"><b>from {{priceB}}<sup>2</sup></b></h5>
     </div>
 </div>
 
@@ -33,5 +33,11 @@
 
 </a>
 <div class=" mb-2">&nbsp;</div>
-<p class="meta-text nb-text">* Same day dental implant restorations will occur an additional cost.</p>
+
+{{#ifequal content-price-terms true}}
+    <p class="meta-text nb-text">* Same day dental implant restorations will occur an additional cost.</p>
+{{else}}
+
+{{/ifequal}}
+
 
