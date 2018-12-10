@@ -216,7 +216,7 @@
     font-weight: bold;
     font-style: italic;
   }
-  &_type{
+  &_type {
     @include fluid-type(16px, 18px);
     font-style: italic;
   }
